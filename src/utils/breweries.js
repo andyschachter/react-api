@@ -1,4 +1,4 @@
-import fetchApiData from '../actions/manufacturers'
+import fetchApiData from '../actions/breweries'
 
 export const fetchData = async () => {
   const data = await fetchApiData()
