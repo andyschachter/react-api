@@ -3,7 +3,6 @@ import './App.css';
 import Index from './components/index';
 import Beers from './components/beers';
 import ErrorPage from './components/error';
-// import Documentation from './components/documentation'
 import { fetchData, filtered } from './utils/breweries'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
