@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
+import Index from './components/index';
 import ErrorPage from './components/error';
 import { fetchData, filtered } from './utils/manufacturers'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
@@ -34,6 +35,15 @@ function App() {
   return (
     <BrowserRouter>
       <Switch>
+
+        <Route exact path='/'>
+          <div>
+            <Index
+              breweryDataAsProps={foundBreweries}
+              setSearchTerm={setSearchTerm}
+              />
+          </div>
+        </Route>
 
         <Route path="*">
           <div><ErrorPage /></div>
