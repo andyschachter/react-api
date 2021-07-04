@@ -4,12 +4,12 @@ const allConfigs = require('../config/sequelize')
 const BreweriesModel = require('./breweries')
 const BeersModel = require('./beers')
 
-const environment = process.env.NODE_ENV ? process.env.NODE_ENV : 'development'
-const {
-  username, password, database, host, dialect,
-} = allConfigs[environment]
+const environment = process.env.NODE_ENV || 'development'
+const config = allConfigs[environment]
 
-const connection = new Sequelize(database, username, password, { host, dialect })
+const connection = new Sequelize(config.database, config.username, config.password, {
+  host: config.host, dialect: config.dialect,
+})
 
 const Breweries = BreweriesModel(connection, Sequelize)
 const Beers = BeersModel(connection, Sequelize, Breweries)
