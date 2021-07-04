@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import Index from './components/index';
 import ErrorPage from './components/error';
-import { fetchData, filtered } from './utils/manufacturers'
+import { fetchData, filtered } from './utils/breweries'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 function App() {
