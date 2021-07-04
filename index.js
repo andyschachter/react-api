@@ -1,7 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const {
-  renderAllBreweries, renderBreweryById, showDocumentation, getBreweries, getBreweryByName, addNewBrewery
+  renderAllBreweries, renderBreweryById, showDocumentation, getBreweries, getBreweryByName, addNewBrewery, getBreweryByNameOrId
 } = require('./controller/breweries')
 const { getBeers, getBeerByNameOrId, getBeerByStyle } = require('./controller/beers')
 
@@ -27,7 +27,7 @@ app.get('/brewery/:id', renderBreweryById)
 app.get('/documentation', showDocumentation)
 
 app.get('/api/brewery/', getBreweries)
-app.get('/api/brewery/:name', getBreweryByName)
+app.get('/api/brewery/:identifier', getBreweryByNameOrId)
 app.get('/api/beer/', getBeers)
 app.get('/api/beer/:identifier', getBeerByNameOrId)
 app.get('/api/style/:style', getBeerByStyle)

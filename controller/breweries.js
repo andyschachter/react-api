@@ -66,6 +66,32 @@ const getBreweryByName = async (request, response) => {
   }
 }
 
+const getBreweryByNameOrId = async (request, response) => {
+  try {
+    const { identifier } = request.params
+
+    const brewery = await models.Breweries.findAll({
+      attributes: ['id', 'name', 'location', 'logo', 'website'],
+      where: {
+        [models.Sequelize.Op.or]: [
+          { id: identifier },
+          { name: { [models.Sequelize.Op.like]: `%${identifier}%` } },
+        ]
+      },
+      include: [{
+        model: models.Beers,
+        attributes: ['id', 'name', 'style', 'abv', 'logo', 'breweryId']
+      }]
+    })
+
+    return brewery
+      ? response.send(brewery)
+      : response.sendStatus(404)
+  } catch (error) {
+    return response.status(500).send('Unable to retrieve brewery, please try again')
+  }
+}
+
 const addNewBrewery = async (request, response) => {
   try {
     const {
@@ -95,5 +121,6 @@ module.exports = {
   showDocumentation,
   getBreweryByName,
   getBreweries,
-  addNewBrewery
+  addNewBrewery,
+  getBreweryByNameOrId
 }
