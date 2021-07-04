@@ -3,8 +3,10 @@ const bodyParser = require('body-parser')
 const {
   renderAllBreweries, renderBreweryById, showDocumentation, getBreweries, getBreweryByName, addNewBrewery
 } = require('./controller/breweries')
-
 const { getBeers, getBeerByNameOrId, getBeerByStyle } = require('./controller/beers')
+
+const path = require('path')
+const cors = require('cors')
 
 const app = express()
 
