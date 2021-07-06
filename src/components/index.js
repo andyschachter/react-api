@@ -1,5 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import BreweryList from './breweryList'
 
 const Search = (props) => {
 
@@ -18,18 +19,9 @@ const Search = (props) => {
       </h2>
       <h2>Breweries</h2>
       <input type="text" name="search" onChange={newSearch}/>
-      {props.breweryDataAsProps.map(brewery => {
-        return (
-          <>
-          <div>
-            <NavLink to={`/brewery/${brewery.id}`} class='breweryName'>
-              <p>{brewery.name}</p>
-              <img src={brewery.logo} class= 'breweryLogo' alt= {brewery.name} />
-            </NavLink>
-          </div>
-          </>
-        )
-      })}
+      {props.breweryDataAsProps.map(brewery => (
+        <BreweryList brewery={brewery} />
+      ))}
       
     </div>
   )

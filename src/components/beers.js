@@ -1,5 +1,7 @@
-import React from 'react'
-import { useParams, NavLink } from 'react-router-dom';
+import React from 'react';
+import { useParams } from 'react-router-dom';
+import HomeButton from './returnHome';
+import BeerRow from './beerRow';
 
 const Beers = (props) => {
 
@@ -11,6 +13,7 @@ const Beers = (props) => {
   })
 
   const brewery = oneBrewery[0]
+  console.log(brewery)
 
   return (
     <>
@@ -18,9 +21,7 @@ const Beers = (props) => {
       {brewery.name}
     </h1>
     <div>
-      <NavLink to='/' class='backHome'>
-      <h4>Return Home</h4>
-      </NavLink>
+      <HomeButton />
     </div>
     <h3>
       {`Location: ${brewery.location}`}
@@ -45,23 +46,7 @@ const Beers = (props) => {
       </thead>
       <tbody>
         {brewery.beers.map(beer => (
-          <>
-          <tr>
-            <td class="beer">
-              {beer.name}
-            </td>
-            <td class="beer">
-              {beer.style}
-            </td>
-            <td class="beer">
-              {beer.abv}
-            </td>
-            <td class="beer">
-              <img src={beer.logo} class='beerLogo' alt= {beer.Name}>
-              </img>
-            </td>
-          </tr>
-          </>
+          <BeerRow beer={beer} />
         ))}
       </tbody>
     </table>
