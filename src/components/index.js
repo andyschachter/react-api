@@ -11,6 +11,11 @@ const Search = (props) => {
 
     <div className='index'>
       <h1>Maine Breweries API</h1>
+      <h2>
+        <a href='/documentation' class='docHeader'>
+          <p>API Documentation</p>
+        </a>
+      </h2>
       <h2>Breweries</h2>
       <input type="text" name="search" onChange={newSearch}/>
       {props.breweryDataAsProps.map(brewery => {
