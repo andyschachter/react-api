@@ -4,6 +4,7 @@ import BreweryByName from './documentation/breweryByName'
 import AllBeers from './documentation/allBeers'
 import BeerByNameOrId from './documentation/beerByNameOrId'
 import Style from './documentation/getStyle'
+import AddBrewery from './documentation/addBrewery'
 
 
 const Documentation = () => {
@@ -62,6 +63,7 @@ const Documentation = () => {
         <AllBeers />
         <BeerByNameOrId />
         <Style />
+        <AddBrewery />
     </>
   )
 }
