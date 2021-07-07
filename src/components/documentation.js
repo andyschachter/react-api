@@ -2,6 +2,9 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import BreweryByName from './documentation/breweryByName'
 import AllBeers from './documentation/allBeers'
+import BeerByNameOrId from './documentation/beerByNameOrId'
+import Style from './documentation/getStyle'
+
 
 const Documentation = () => {
   return (
@@ -57,6 +60,8 @@ const Documentation = () => {
         </table>
         <BreweryByName />
         <AllBeers />
+        <BeerByNameOrId />
+        <Style />
     </>
   )
 }

@@ -3,7 +3,7 @@ import React from 'react'
 const BreweryByName = () => {
   return (
   <>
-  <h3>GET /api/brewery/{'{'}breweryName{'}'}</h3>
+  <h3>GET /api/brewery/{'{'}breweryNameOrId{'}'}</h3>
         <table>
           <tr>
             <td>return all breweries from the API</td>
