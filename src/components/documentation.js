@@ -1,5 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import BreweryByName from './documentation/breweryByName'
+import AllBeers from './documentation/allBeers'
 
 const Documentation = () => {
   return (
@@ -53,6 +55,8 @@ const Documentation = () => {
             </td>
           </tr>
         </table>
+        <BreweryByName />
+        <AllBeers />
     </>
   )
 }
